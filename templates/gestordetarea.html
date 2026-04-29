@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block titulo %}SweetPlanner{% endblock %}
+
+{% block contenido %}
+
+<div class="container-fluid P-5 "style="background-color:#d6bac1">
+  <h1 class="text-center mt-5 pt-5 fw-bold" style="color: #000000a1; ">
+    📋  BIENVENIDO AL GESTOR DE TAREAS 📋
+  </h1>
+</div>
+
+<div class="text-center mt-5 pt-5">
+
+<div id="carouselExampleCaptions" class="carousel slide shadow-lg rounded-4 mx-auto w-50" data-bs-ride="carousel">
+  
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+  <div class="carousel-inner shadow-lg rounded-4 mx-auto">
+
+    <div class="carousel-item active">
+      <img src="{{ url_for('static', filename='5.jpeg') }}" class="d-block w-100" alt="">
+      <div class="carousel-caption d-none d-md-block" style="background-color: #fcfcfce5;">
+        <p class="fw-bold fs-3 text-black">
+          SweetPlanner busca lo mejor para ti.
+        </p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='4.jpeg') }}" class="d-block w-100" alt="">
+      <div class="carousel-caption d-none d-md-block" style="background-color: #fcfcfce5;">
+        <p class="fw-bold fs-3 text-black">
+          SweetPlanner te ayuda a organizar tu día.
+        </p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='3.jpeg') }}" class="d-block w-100" alt="">
+      <div class="carousel-caption d-none d-md-block" style="background-color: #fcfcfce5;">
+        <p class="fw-bold fs-3 text-black">
+          SweetPlanner te ayuda a mantener tu productividad.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+</div>
+
+</div>
+
+<div class="container mt-5 pt-5">
+
+  <div class="card shadow-lg p-5 rounded-4 mx-auto text-center w-100"
+       style="background-color: #ffe4e1;">
+
+    <h2 class="mb-3 fw-bold" style="color:#444;">
+      🚀 Organiza tus tareas fácilmente
+    </h2>
+
+    <p style="color:#666; font-size: 1.1rem;">
+      Agrega, edita y controla tus tareas para mantenerte enfocado
+      y mejorar tu productividad día a día.
+    </p>
+
+    <button class="btn mt-3 px-4 py-2 rounded-pill shadow-sm"
+            style="background-color:#ff7eb3; color:white;">
+      Empezar
+    </button>
+
+  </div>
+
+</div>
+
+{% endblock %}

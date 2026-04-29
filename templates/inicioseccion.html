@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<h1 class="text-center mt-3">Iniciar Sesión</h1>
+{% endblock %}
+
+{% block contenido %}
+
+<div class="container my-4 pt-5">
+
+    <div class="card shadow-lg p-4 rounded-4 mx-auto" style="background-color: #F5E6E8; max-width: 400px;">
+        
+        <h3 class="text-center mb-3" style="color:#5A5A5A;">
+            INICIA SESIÓN PARA ACCEDER A TU GESTOR DE TAREAS
+        </h3>
+
+        <form method="POST" action="/login" class="needs-validation" novalidate>
+
+    
+            <div class="mb-3">
+                <label class="form-label">NOMBRE DE USUARIO</label>
+                <input type="text" name="username" class="form-control" required>
+                <div class="invalid-feedback">
+                    El usuario es obligatorio
+                </div>
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label">CONTRASEÑA</label>
+                <input type="password" name="password" class="form-control"
+                required style="border:1px solid #C8A2AA; border-radius:10px;">
+                <div class="invalid-feedback">
+                    La contraseña es obligatoria
+                </div>
+            </div>
+
+            <button type="submit" class="btn w-100 mb-3"
+            style="background-color:#C8A2AA; color:white; border-radius:10px;">
+                INICIAR SESIÓN
+            </button>
+            <div style="text-align: center;">
+            <a class="icon-link icon-link-hover" href="#">
+  ¿OLVIDASTE TU CONTRASEÑA? 
+  <svg xmlns="http://www.w3.org/2000/svg" class="bi" viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+  </svg>
+</a>
+</div>
+        </form>
+    </div>
+</div>
+
+
+<script>
+(() => {
+  'use strict'
+  const forms = document.querySelectorAll('.needs-validation')
+
+  forms.forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+
+{% endblock %}

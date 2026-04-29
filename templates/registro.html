@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Registro{% endblock %}
+
+{% block contenido %}
+
+<div class="row justify-content-center">
+    <div class="col-md-4 mt-5 pt-5">
+        
+        <div class="card p-4 pt-5 shadow" style="background-color: #F5E6E8;">
+            
+            <h3 class="text-center mb-3" style="color:#5A5A5A;">
+                REGÍSTRATE PARA EMPEZAR
+            </h3>
+
+        
+            {% if error %}
+                <div class="alert alert-danger text-center">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            {% if exito %}
+                <div class="alert alert-success text-center">
+                    {{ exito }}
+                </div>
+            {% endif %}
+
+            <form method="POST" novalidate>
+                
+                <div class="mb-3">
+                    <label class="form-label">NOMBRE DE USUARIO</label>
+                    <input type="text" name="nombre" class="form-control" required>
+                    <div class="invalid-feedback">
+                        El nombre es obligatorio
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">CORREO</label>
+                    <input type="email" name="email" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Ingresa un correo válido
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">CONTRASEÑA</label>
+                    <input type="password" name="password" class="form-control" required>
+                    <div class="invalid-feedback">
+                        La contraseña es obligatoria
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">CONFIRMAR CONTRASEÑA</label>
+                    <input type="password" name="confirmar" class="form-control" required>
+                    <div class="invalid-feedback" id="error-password">
+                        Debes confirmar la contraseña
+                    </div>
+                </div>
+
+                <button type="submit" class="btn w-100 mb-3"
+                style="background-color:#C8A2AA; color:white; border-radius:10px;">
+                    REGISTRARSE
+                </button>
+
+                <div class="text-center">
+                    <a href="{{ url_for('login') }}">¿Ya tienes cuenta? Inicia sesión</a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script>
+(() => {
+  'use strict'
+  const forms = document.querySelectorAll('form')
+
+  forms.forEach(form => {
+    form.addEventListener('submit', event => {
+
+    const password = form.querySelector('[name="password"]')
+    const confirmar = form.querySelector('[name="confirmar"]')
+
+    confirmar.setCustomValidity("")
+
+    if (password.value !== confirmar.value) {
+        confirmar.setCustomValidity("Las contraseñas no coinciden")
+    }
+
+    if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+    }
+    form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+
+{% endblock %}
