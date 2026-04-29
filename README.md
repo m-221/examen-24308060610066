@@ -7,6 +7,8 @@
 <img width="518" height="739" alt="Captura de pantalla 2026-04-29 091112" src="https://github.com/user-attachments/assets/fb1563a6-d197-4527-b988-273cf4a400ba" /> **los mensajes de error**
 
 
+<img width="1044" height="315" alt="image" src="https://github.com/user-attachments/assets/616dc5a0-c30e-4095-9b6a-e55932b4b71f" /> error con mongo
+
 
 
 
