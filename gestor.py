@@ -15,7 +15,6 @@ from main import EMAIL_USER, EMAIL_PASS
 app = Flask(__name__)
 
 
-
 def enviar_correo(destinatario, codigo):
     mensaje = MIMEText(f"Tu código es: {codigo}")
     mensaje['Subject'] = "Código"
@@ -53,14 +52,16 @@ def enviar_correo(destinatario, codigo):
         return False 
 
 
-class GestorTareas:
+class Gestor:
     def __init__(self):
         try:
             self.cliente = MongoClient('mongodb://localhost:27017/', serverSelectionTimeoutMS=5000)
             self.cliente.admin.command('ping')
 
-            self.db = self.cliente['gestor_tareas']
+            self.db = self.cliente['24308060610066']
             self.usuarios = self.db['usuarios']
+            self.tareas = self.db['tareas']
+            
 
             self.usuarios.create_index(
                 "email",
@@ -116,7 +117,7 @@ class GestorTareas:
             return None, "Error al registrar usuario"
 
 
-gestor = GestorTareas()
+gestor = Gestor()
 
 
 if __name__ == '__main__':

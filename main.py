@@ -9,9 +9,47 @@ from email.mime.text import MIMEText
 import random
 from datetime import datetime
 
+def enviar_correo(destinatario, codigo):
+    mensaje = MIMEText(f"Tu código es: {codigo}")
+    mensaje['Subject'] = "Código"
+    mensaje['From'] = EMAIL_USER
+    mensaje['To'] = destinatario
+
+    try:
+        servidor = smtplib.SMTP("smtp.gmail.com", 587)
+        servidor.set_debuglevel(1)
+        servidor.ehlo()
+        servidor.starttls()
+        servidor.ehlo()
+
+        servidor.login(EMAIL_USER, EMAIL_PASS)
+
+        resultado = servidor.sendmail(
+            EMAIL_USER,
+            destinatario,
+            mensaje.as_string()
+        )
+
+        servidor.quit()
+
+        print("Resultado envío:", resultado)
+
+        if resultado == {}:
+            print("✅ Correo enviado correctamente")
+            return True   
+        else:
+            print("⚠️ Algo falló:", resultado)
+            return False 
+
+    except Exception as e:
+        print("❌ Error enviando correo:", e)
+        return False 
+
+
+
 
 app = Flask(__name__)
-app.secret_key = "clave_secreta"
+app.secret_key = "clave_secreta_4308060610066" 
 
 
 EMAIL_USER = "fernandainfantepedroza040819@gmail.com"
@@ -19,8 +57,9 @@ EMAIL_PASS = "nvfe mqow ylpn qpas"
 
 
 client = MongoClient("mongodb://localhost:27017/")
-db = client["gestor_tareas"]
+db = client["24308060610066"]
 usuarios = db["usuarios"]
+tareas = db["tareas"]
 
 try:
     usuarios.drop_index("email_1")
@@ -78,7 +117,7 @@ def registro():
         if password != confirmar:
             return render_template('registro.html', error="Las contraseñas no coinciden")
 
-        email_valido = validar_email(email)
+        email_valido = validate_email(email)
 
         if not email_valido:
             return render_template('registro.html', error="Correo inválido")
