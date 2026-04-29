@@ -1,15 +1,8 @@
-![alt text](image.png) tenia borrado templates
-![alt text](image-1.png)
+<img width="1917" height="946" alt="Captura de pantalla 2026-04-29 090228" src="https://github.com/user-attachments/assets/bc6f7bcb-5359-4326-86f7-f348d13974ed" /> *pasar todo, lo tenia borrado*
 
-![alt text](image-2.png)crear venv
-
-
-![alt text](image-2.png)descargar imagenes
-![alt text](image-3.png)pasarlas  astatic
+<img width="1270" height="591" alt="Captura de pantalla 2026-04-29 090304" src="https://github.com/user-attachments/assets/9620af5d-cc23-425c-b9bd-9c4a573d3d53" />
+<img width="1473" height="806" alt="Captura de pantalla 2026-04-29 090519" src="https://github.com/user-attachments/assets/369f596c-3aa5-4224-a03c-6dc741c3e99c" /> *pasar las imagene*
+<img width="1182" height="970" alt="Captura de pantalla 2026-04-29 090746" src="https://github.com/user-attachments/assets/7be44800-4409-42be-b77f-a3516d029d31" /> *no cargo por python y mongo*
 
 
-![alt text](image-4.png) no cargo la pagina
-![alt text](image-5.png) ya cargo , solo batallo pòr que python y mongo chocan o flask no recuerdo
 
-
-![alt text](image-6.png) 
