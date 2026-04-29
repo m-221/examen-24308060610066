@@ -13,6 +13,8 @@
 
 
 <img width="1704" height="969" alt="image" src="https://github.com/user-attachments/assets/36caa996-863e-486a-b06e-db7b5a05aee5" />**otro error**
+<img width="1391" height="451" alt="image" src="https://github.com/user-attachments/assets/b0e31efc-df46-4f6a-81ee-2a11455374b9" />
+
 
 
 
